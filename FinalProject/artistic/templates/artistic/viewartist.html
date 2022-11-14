@@ -1,0 +1,178 @@
+{% extends 'artistic/base.html' %}
+{% load static%}
+{% block content %}
+<style>
+.yellowContent {
+    color: #ffffff;
+    background:#ffffff10;
+    backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+}
+
+/* CSS */
+.buttonStyle {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #fdda14;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #d5b606}
+
+.button:active {
+  background-color: #fdda14;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.crad{
+    background-color: #d4d4ce;
+    color: #023246;
+    
+}
+.cardBtn{
+background-color: #023246;
+}
+.cardBtn:hover {background-color: #011f2b}
+.h2{
+    color: #d4d4ce;
+}
+</style>
+<div class="container content center pt-5 " ><h2>Meet our Artists!</h2>
+    <div class="container content center p-5 " >
+        <h2 class="wide text-center pt-4 fs-2">What exactly is an artist?</h2>
+        <br>
+        <p class="justify text-center text-light fs-5">Artists are people who notice things and find significance there, they draw connections. Artists are people who make art as a symbol, a keepsake, a mark of that experience of noticing. By turning this impulse into a practice, an artist develops the skills to craft this work consistently and thoughtfully.</p>
+    </div>
+    <div class="container py-5 h-100">
+        <div class="row d-flex  align-items-center h-100">
+          <div class="col-md-4 col-xl-4">
+              <div class="card mt-3" style="border-radius: 15px;">
+                  <div class="card-body text-center">
+                    <div class="mt-3 mb-4">
+                      <img src="{% static 'images/Avogado.jpg' %}"
+                        class="rounded-circle img-fluid" style="width: 100px;" />
+                    </div>
+                    <h4 class="mb-2 ">Avogado</h4>
+                    <p class="text-muted mb-4">Digital art <a
+                        href="#!"></a></p>
+                    
+                    <button type="button" class="btn cardBtn btn-outline-light btn-rounded btn-lg">
+                      View profile
+                    </button>
+                    
+                  </div>
+                </div>
+    
+          </div>
+          <div class="col-md-4 col-xl-4">
+            <div class="card mt-3" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="{% static 'images/Avogado.jpg' %}"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2 ">Avogado</h4>
+                  <p class="text-muted mb-4">Digital art <a
+                      href="#!"></a></p>
+                  
+                  <button type="button" class="btn cardBtn btn-outline-light btn-rounded btn-lg">
+                    View profile
+                  </button>
+                  
+                </div>
+              </div>
+  
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <div class="card mt-3" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="{% static 'images/Avogado.jpg' %}"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2">Avogado</h4>
+                  <p class="text-muted mb-4">Digital art <a
+                      href="#!"></a></p>
+                  
+                  <button type="button" class="btn  cardBtn btn-outline-light btn-rounded btn-lg">
+                    View profile
+                  </button>
+                  
+                </div>
+              </div>
+  
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <div class="card mt-3" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="{% static 'images/Avogado.jpg' %}"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2 ">Avogado</h4>
+                  <p class="text-muted mb-4">Digital art <a
+                      href="#!"></a></p>
+                  
+                  <button type="button" class="btn  cardBtn btn-outline-light btn-rounded btn-lg">
+                    View profile
+                  </button>
+                  
+                </div>
+              </div>
+  
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <div class="card mt-3" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="{% static 'images/Avogado.jpg' %}"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2 ">Avogado</h4>
+                  <p class="text-muted mb-4">Digital art <a
+                      href="#!"></a></p>
+                  
+                  <button type="button" class="btn cardBtn btn-outline-light btn-rounded btn-lg">
+                    View profile
+                  </button>
+                  
+                </div>
+              </div>
+  
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <div class="card mt-3" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="{% static 'images/Avogado.jpg' %}"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2 ">Avogado</h4>
+                  <p class="text-muted mb-4">Digital art <a
+                      href="#!"></a></p>
+                  
+                  <button type="button" class="btn cardBtn btn-outline-light btn-rounded btn-lg">
+                    View profile
+                  </button>
+                  
+                </div>
+              </div>
+  
+        </div>
+
+          
+        </div>
+      </div>
+</div>
+{% endblock %}
+
+
+

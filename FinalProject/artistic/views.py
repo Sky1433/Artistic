@@ -17,6 +17,9 @@ def artDetails(request: HttpRequest):
 def profile(request: HttpRequest):
 
     return render(request, "artistic/profilePage.html")
+def edit_profile(request: HttpRequest):
+
+    return render(request, "artistic/editProfile.html")
     
 def register_user(request: HttpRequest):
 
@@ -32,3 +35,8 @@ def upload_artwork(request: HttpRequest):
 def modify_artwork(request: HttpRequest):
 
     return render(request, "artistic/modifypost.html")
+
+def view_artists(request: HttpRequest):
+
+    return render(request, "artistic/viewartist.html")    
+    

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="MainCss.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Libre+Baskerville:ital@1&family=Poppins:wght@300;700&family=Roboto&display=swap" rel="stylesheet">
   </head>
   <style>
     #navbarbulr {
@@ -16,14 +19,17 @@
     backdrop-filter: blur(12px);
    -webkit-backdrop-filter: blur(12px);
     }
+    .h2{
+    color: #d4d4ce;
+    }
   </style>
-  <body style="background-color: #313131">
+  <body style="background-color: #023246">
     <!-- Navbar -->
 <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navbarbulr">
       <div class="container">
-        <a class="navbar-brand fs-3" href="#!"><span style="color: #fdda14">Artistic</span></a>
+        <a class="navbar-brand fs-3" href="{%url 'artistic:home'%}"><span style="color: #287094">Artistic</span></a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
           data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -38,11 +44,12 @@
               <a class="nav-link text-light fs-4" href="{%url 'artistic:gallery'%}">Gellrey</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light fs-4" href="{%url 'artistic:gallery'%}">Artists</a>
+              <a class="nav-link text-light fs-4" href="{%url 'artistic:artists'%}">Artists</a>
             </li>
             
         
           </ul>
+
           <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item  me-3 me-lg-0 mr-3">
                 <a class="nav-link" href="#!">
@@ -52,19 +59,35 @@
                   </div>
                 </a>
               </li>
-            <li class="nav-item me-3 me-lg-0 mr-3">
-                <a class="btn btn-outline-light  " href="{%url 'artistic:login'%}">Log in</a>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 me-3 me-lg-0 mr-3 pt-2" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              </form>
+            
+            <li class="nav-item me-3 me-lg-0 pt-2">
+                <a class="btn btn-outline-light ms-2" href="{%url 'artistic:login'%}">Login</a>
             </li>
-            <li class="nav-item me-3 me-lg-0 ">
+            <li class="nav-item me-3 me-lg-0 pt-2 ">
                 <a class="btn btn-light ms-2 " href="{%url 'artistic:register'%}">Register</a>
             </li>
-            
-           
+
+            <div class="dropdown text-end ms-2 me-3 me-lg-0 mr-3 pt-2">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                  <img src="{% static 'images/Avogado.jpg' %}" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34.4px, 0px);" data-popper-placement="bottom-start">
+                  <li><a class="dropdown-item" href="{%url 'artistic:upload'%}">Upload Artwork</a></li>
+                  <li><a class="dropdown-item" href="{%url 'artistic:edit'%}">Settings</a></li>
+                  <li><a class="dropdown-item" href="{%url 'artistic:profile'%}">Profile</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{%url 'artistic:register'%}">Sign out</a></li>
+                </ul>
+              </div>
             
           </ul>
         </div>
       </div>
     </nav>
+   
     <!-- Navbar -->
     {% block details %} 
     <!--Section: carousel-->

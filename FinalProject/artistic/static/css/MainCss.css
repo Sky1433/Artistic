@@ -1,3 +1,15 @@
+/*font-family: 'Amiri', serif;
+font-family: 'Libre Baskerville', serif; itailc (for logo)
+font-family: 'Poppins', sans-serif; (for content light)
+font-family: 'Roboto', sans-serif; (for navabr)
+*/
+
+/*them colors 
+for logo #287094
+for secondry bg #d4d4ce
+for content color #f6f6f6
+for bg #023246
+*/
 #navbarbulr {
     background:#ffffff10;
     backdrop-filter: blur(12px);
