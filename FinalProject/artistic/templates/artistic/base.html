@@ -1,0 +1,122 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} Artistic Site{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="MainCss.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  </head>
+  <style>
+    #navbarbulr {
+    background:#ffffff10;
+    backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+  <body style="background-color: #313131">
+    <!-- Navbar -->
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navbarbulr">
+      <div class="container">
+        <a class="navbar-brand fs-3" href="#!"><span style="color: #fdda14">Artistic</span></a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav  ps-5 me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light fs-4" href="{%url 'artistic:home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-4" href="{%url 'artistic:gallery'%}">Gellrey</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-4" href="{%url 'artistic:gallery'%}">Artists</a>
+            </li>
+            
+        
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item  me-3 me-lg-0 mr-3">
+                <a class="nav-link" href="#!">
+                  <div>
+                    <i class="bi bi-bell text-light" style="font-size: 1.5rem; "></i>
+                    <span class="badge rounded-pill badge-notification bg-dark">11</span>
+                  </div>
+                </a>
+              </li>
+            <li class="nav-item me-3 me-lg-0 mr-3">
+                <a class="btn btn-outline-light  " href="{%url 'artistic:login'%}">Log in</a>
+            </li>
+            <li class="nav-item me-3 me-lg-0 ">
+                <a class="btn btn-light ms-2 " href="{%url 'artistic:register'%}">Register</a>
+            </li>
+            
+           
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    {% block details %} 
+    <!--Section: carousel-->
+    <section>
+      <!-- Intro -->
+      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/carousel01.jpg' %}" class="d-block w-100 h-50" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/carousel02.jpg' %}" class="d-block w-100 h-50" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/carousel03.jpg' %}" class="d-block w-100 h-50;" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon white-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon white-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+        <div class="mask" style="background-color: rgba(250, 182, 162, 0.15);"></div>
+      </div>
+      <!-- Intro -->
+    </section>
+    <!--Section: carousel End-->
+    {% endblock %}
+  </header>
+  <!-- Navbar -->
+  
+    {% block content %}
+    {% endblock %}
+    <!-- Footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="{%url 'artistic:home'%}" class="nav-link px-2 text-muted text-light">Home</a></li>
+            <li class="nav-item"><a href="{%url 'artistic:gallery'%}" class="nav-link px-2 text-muted text-light">Gellrey</a></li>
+            <li class="nav-item"><a href="{%url 'artistic:gallery'%}" class="nav-link px-2 text-muted text-light">Artists</a></li>
+            
+          </ul>
+          <p class="text-center text-muted">© 2022 Artistic, Inc</p>
+        </footer>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

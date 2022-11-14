@@ -1,0 +1,74 @@
+#navbarbulr {
+    background:#ffffff10;
+    backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+}
+
+.white-icon{
+    color:white !important;
+    }   
+
+.carousel .item {
+    height: 300px;
+      }
+    .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+    }    
+.body{
+    background-color: #19171a;
+
+}    
+
+/* profile styling
+.gradient-custom-2 {
+    
+    
+
+    }*/
+
+  
+/* CSS */
+.button-52 {
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+.button-52:after {
+      content: "";
+      background-color: #ffe54c;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
+    
+.button-52:hover:after {
+      top: 0px;
+      left: 0px;
+    }
+    
+@media (min-width: 768px) {
+      .button-52 {
+        padding: 13px 50px 13px;
+      }
+    }   
+
+.yellowContent {
+    color: #ffe54c;
+}
