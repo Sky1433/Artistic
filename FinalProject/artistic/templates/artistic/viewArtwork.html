@@ -1,0 +1,49 @@
+{% extends 'artistic/base.html' %}
+{% block title %} Your artworks {% endblock %}
+{% block content %}
+
+
+<div class="container py-5 h-100">
+<div class="row d-flex justify-content-center align-items-center h-100" style="background-color: #d4d4ce; ">
+    <h1>Your artworks</h1>
+
+    {% if "search"  in  request.GET %}
+    <h2> Search results for "{{ request.GET.search }}": </h2>
+    {% endif %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Descrption</th>
+            <th scope="col">Publish date</th>
+            <th scope="col">Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for artwork in artworks %}
+            <tr>
+                <th scope="row"><a href="{% url 'artistic:details' artwork.id %}">{{ artwork.title }}</a></th>
+                <td>{{ artwork.content}}</td>
+                <td>{{ artwork.publish_date }}</td>
+                <td>
+
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Edit
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'artistic:update_post' artwork.id %}">Update</a></li>
+                          <li><a class="dropdown-item" href="{% url 'artistic:delete_post' artwork.id %}">Delete</a></li>
+                        </ul>
+                      </div>
+
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}

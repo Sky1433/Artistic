@@ -64,10 +64,10 @@
               </form>
             
             <li class="nav-item me-3 me-lg-0 pt-2">
-                <a class="btn btn-outline-light ms-2" href="{%url 'artistic:login'%}">Login</a>
+                <a class="btn btn-outline-light ms-2" href="{%url 'accounts:login'%}">Login</a>
             </li>
             <li class="nav-item me-3 me-lg-0 pt-2 ">
-                <a class="btn btn-light ms-2 " href="{%url 'artistic:register'%}">Register</a>
+                <a class="btn btn-light ms-2 " href="{%url 'accounts:register'%}">Register</a>
             </li>
 
             <div class="dropdown text-end ms-2 me-3 me-lg-0 mr-3 pt-2">
@@ -75,11 +75,13 @@
                   <img src="{% static 'images/Avogado.jpg' %}" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34.4px, 0px);" data-popper-placement="bottom-start">
+                    <!--artwork.id-->
+                  <li><a class="dropdown-item" href="{%url 'artistic:myArtwork'%}">My Artwork</a></li>
                   <li><a class="dropdown-item" href="{%url 'artistic:upload'%}">Upload Artwork</a></li>
                   <li><a class="dropdown-item" href="{%url 'artistic:edit'%}">Settings</a></li>
                   <li><a class="dropdown-item" href="{%url 'artistic:profile'%}">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="{%url 'artistic:register'%}">Sign out</a></li>
+                  <li><a class="dropdown-item" href="{%url 'accounts:register'%}">Sign out</a></li>
                 </ul>
               </div>
             

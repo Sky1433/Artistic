@@ -47,22 +47,22 @@
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
               <form>
-
+                {% csrf_token %}
                 <div class="form-outline mb-4">
-                  <input type="username" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="username" id="form3Example1cg" class="form-control form-control-lg" name="username" />
                   <label class="form-label" for="form3Example1cg">Username</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"name="password" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button class="buttonStyle button col-6 mx-auto" role="button">Login</button>
+                  <button type="submit" class="buttonStyle button col-6 mx-auto" role="button">Login</button>
                 </div>
                 
-                <p class="text-center text-muted mt-5 mb-0">Don't Have an account? <a href="{%url 'artistic:register'%}"
+                <p class="text-center text-muted mt-5 mb-0">Don't Have an account? <a href="{%url 'accounts:register'%}"
                     class="fw-bold text-body"><u>Register here</u></a></p>
 
               </form>
