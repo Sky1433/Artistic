@@ -1,82 +1,89 @@
 {% extends 'artistic/base.html' %}
 {% load static%}
 {% block details %}
-<style>
-.yellowContent {
-    color: #ffffff;
-    background:#ffffff10;
-    backdrop-filter: blur(12px);
-   -webkit-backdrop-filter: blur(12px);
-}
-
-/* CSS */
-.buttonStyle {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #fdda14;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-.button:hover {background-color: #d5b606}
-
-.button:active {
-  background-color: #fdda14;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-</style>
-<section class="vh-100 bg-image"
-  style="background-image: url('https://images.unsplash.com/photo-1545518514-ce8448f542b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');">
-  <div class="mask d-flex align-items-end h-100">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100 pt-4">
-        
-        <div class="col-6 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">edit profile</h2>
-             
-              <form>
-                <div class="mb-5">
-                    <label for="formFile" class="form-label">Change your profile picture</label>
-                    <input class="form-control" type="file" id="formFile">
+<section class="h-100 mt-5">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-12 col-xl-12">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #d4d4ce; height:200px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                <img src="{% static 'images/Avogado.jpg' %}"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                  style="width: 150px; z-index: 1">
+                
+                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                  style="z-index: 1;">
+                  Edit profile
+                </button>
+                
+              </div>
+              <div class="ms-3" style="margin-top: 130px;">
+                <h5>Avogado</h5>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                <div>
+                  <p class="mb-1 h5">253</p>
+                  <p class="small text-muted mb-0">Photos</p>
                 </div>
-                <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Your Name</label>
-                  </div>
-                  <div class="form-outline mb-4">
-                    <textarea type="descrption" id="form3Example1cg" class="form-control form-control-lg"/></textarea>
-                    <label class="form-label" for="form3Example1cg">About</label>
-                  </div>
-  
-                <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
-                    <option selected>Art type</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-               
-                <div class="d-flex justify-content-center">
-                  <button class="buttonStyle button col-4 mx-auto" role="button">Save</button>
-                  <button class="buttonStyle button col-4 mx-auto" role="button">Cancel</button>
+                <div class="px-3">
+                  <p class="mb-1 h5">1026</p>
+                  <p class="small text-muted mb-0">Followers</p>
                 </div>
-               
-              </form>
-
+                <div>
+                  <p class="mb-1 h5">478</p>
+                  <p class="small text-muted mb-0">Following</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">About</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-1">Web Developer</p>
+                  <p class="font-italic mb-1">Lives in New York</p>
+                  <p class="font-italic mb-0">Photographer</p>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0">Recent photos</p>
+              </div>
+              <div class="row g-2">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Collections
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Likes</a>
+                    </li>
+                  </ul>
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+              </div>
+              <div class="row g-2">
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+ 
 {% endblock %}

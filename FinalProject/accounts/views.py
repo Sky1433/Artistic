@@ -11,8 +11,26 @@ def register_user(request: HttpRequest):
         new_user.save()
     return render(request, "accounts/registerPage.html")
     
-def login_user(request: HttpRequest):
 
-    return render(request, "accounts/loginPage.html") 
+def login_user(request: HttpRequest):
+    msg = ""
+    if request.method == "POST":
+        user = authenticate(request, username=request.POST["username"], password=request.POST["password"])
+        
+        if user:
+            login(request, user)
+            return redirect("artistic:home")
+        else:
+            msg = "User Not Found , check your credentials"
+
+    return render(request, "accounts/loginPage.html", {"msg" : msg})
+
+
+def logout_user(request: HttpRequest):
+
+    logout(request)
+
+    return redirect("artistic:home")
+
 
     

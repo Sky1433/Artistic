@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.http import HttpRequest
+from django.http import HttpRequest,JsonResponse
 from datetime import datetime
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Artwork,Comment
+
 #from import accounts
 
 # Create your views here.
@@ -30,7 +31,7 @@ def artDetails(request: HttpRequest):
     return render(request, "artistic/ArtDeatails.html", {"artwork" : artwork, "comments" : comments})
 
 
-    
+
 def upload_artwork(request: HttpRequest):
     ''' this function let the artists who has premtion to upload thier artwork'''
     user : User = request.user
@@ -39,7 +40,7 @@ def upload_artwork(request: HttpRequest):
         return redirect("accounts:login")
 
     if request.method == "POST":
-        new_artwork = Artwork(user = request.user, title=request.POST["title"], content = request.POST["content"], publish_date=request.POST["publish_date"], is_artist = request.POST["is_artist"], artwork_type=request.POST["artwork_type"] , image=request.FILES["image"])
+        new_artwork = Artwork(user = request.user, title=request.POST["title"], content = request.POST["content"], publish_date=request.POST["publish_date"], artwork_type=request.POST["artwork_type"] , image=request.FILES["image"])
         new_artwork.save()
     return render(request, "artistic/UploadPage.html", {"Artwork" : Artwork})
 
@@ -95,6 +96,20 @@ def view_artwork(request: HttpRequest):
     else:
         artwork = Artwork.objects.all()
     return render(request, "artistic/viewArtwork.html", {"artwork" : artwork})
+
+def follow_user(request: HttpRequest):
+    ''' this function will view artist profile to the uesrs and can follow them'''
+    profile_to_follow = get_object_or_404(UserProfile, pk=user_profile_id)
+    user_profile = request.user.userprofile
+    data = {}
+    if profile_to_follow.follows.filter(id=user_profile.id).exists():
+        data['message'] = "You are already following this user."
+    else:
+        profile_to_follow.follows.add(user_profile)
+        data['message'] = "You are now following {}".format(profile_to_follow)
+    return JsonResponse(data, safe=False)
+
+    return render(request, "artistic/FollowersPage.html") 
 
 
 def view_artists(request: HttpRequest):

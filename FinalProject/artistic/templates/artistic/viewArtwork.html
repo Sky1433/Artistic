@@ -5,7 +5,7 @@
 
 <div class="container py-5 h-100">
 <div class="row d-flex justify-content-center align-items-center h-100" style="background-color: #d4d4ce; ">
-    <h1>Your artworks</h1>
+    <h1>My artworks</h1>
 
     {% if "search"  in  request.GET %}
     <h2> Search results for "{{ request.GET.search }}": </h2>
@@ -32,8 +32,8 @@
                           Edit
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'artistic:update_post' artwork.id %}">Update</a></li>
-                          <li><a class="dropdown-item" href="{% url 'artistic:delete_post' artwork.id %}">Delete</a></li>
+                          <li><a class="dropdown-item" href="{% url 'artistic:modify_artwork' artwork.id %}">Update</a></li>
+                          <li><a class="dropdown-item" href="{% url 'artistic:delete_artworkt' artwork.id %}">Delete</a></li>
                         </ul>
                       </div>
 

@@ -9,9 +9,10 @@ urlpatterns=[
     path("details/", views.artDetails,name="details"),
     path("profile/",views.profile,name="profile"),
     path("edit/profile/",views.edit_profile,name="edit"),
+    path("view/profile/",views.follow_user,name="view"),
     path("upload/",views.upload_artwork,name="upload"),
     path("myArtwork/",views.view_artwork,name="myArtwork"),
-    #path("delete/<artwork_id>/",views.delete_artwork,name="delete"),
+    path("delete/<artwork_id>/",views.delete_artwork,name="delete"),
     path("artists/",views.view_artists, name="artists"),
-    path("artwork/<artwork_id>/comment/new/", views.add_comment, name="add_comment")
+    path("artwork/<artwork_id>/comment/new/", views.add_comment, name="add_comment"), 
 ]

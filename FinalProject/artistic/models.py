@@ -13,7 +13,7 @@ class Artwork(models.Model):
     content = models.TextField()
     publish_date = models.DateTimeField()
     image = models.ImageField(upload_to="images/")
-    is_artist = models.BooleanField()
+    is_artist = models.BooleanField(null=True)
     artwork_type  = models.CharField(max_length=64, choices = artwork_type_choices.choices, default=artwork_type_choices.Painting)
 
     def __str__(self) -> str:

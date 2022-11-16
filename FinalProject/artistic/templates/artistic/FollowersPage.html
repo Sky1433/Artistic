@@ -12,10 +12,10 @@
                   alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                   style="width: 150px; z-index: 1">
                 
-                <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark"
-                  style="z-index: 1;">
-                  Follow
-                </button>
+                  <div class="message-section btn btn-dark" style="display:none;"></div>
+                    {% for user_profile in all_user_profiles %}
+                     <button data-url="{% url "example_app.views.follow_user " user_profile_id=user_profile.id %}" class="follow-button" type="button">Follow</button>
+                    {% endfor %}
                 
               </div>
               <div class="ms-3" style="margin-top: 130px;">
@@ -85,5 +85,10 @@
       </div>
     </div>
   </section>
- 
+ <script>
+ $('.follow-button').click(function() {
+    $.get($(this).data('url'), function(response) {
+        $('.message-section').text(response.message).show();
+    });
+});</script>
 {% endblock %}

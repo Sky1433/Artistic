@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Libre+Baskerville:ital@1&family=Poppins:wght@300;700&family=Roboto&display=swap" rel="stylesheet">
+     <!-- CSS -->
+     <link rel="stylesheet" href="{% static 'photo/css/style.css' %}">
+     <link rel="stylesheet" href="{% static 'photo/css/simplelightbox.min.css' %}">
+
+     <!-- JAVASCRIPT -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+     <script type="text/javascript" src="{% static 'photo/js/simple-lightbox.min.js' %}"></script>
   </head>
   <style>
     #navbarbulr {
@@ -23,13 +30,13 @@
     color: #d4d4ce;
     }
   </style>
-  <body style="background-color: #023246">
+  <body style="background-color: #464246">
     <!-- Navbar -->
 <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navbarbulr">
       <div class="container">
-        <a class="navbar-brand fs-3" href="{%url 'artistic:home'%}"><span style="color: #287094">Artistic</span></a>
+        <a class="navbar-brand fs-3" href="{%url 'artistic:home'%}"><span style="color: #cabcb0">Artistic</span></a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
           data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -37,14 +44,14 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
           <ul class="navbar-nav  ps-5 me-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light fs-4" href="{%url 'artistic:home'%}">Home</a>
+            <li class="nav-item" style="color: #a5b9b9;" >
+              <a class="nav-link fs-4 " style="color: #a5b9b9;" href="{%url 'artistic:home'%}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light fs-4" href="{%url 'artistic:gallery'%}">Gellrey</a>
+              <a class="nav-link fs-4" style="color: #a5b9b9;" href="{%url 'artistic:gallery'%}">Gellrey</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light fs-4" href="{%url 'artistic:artists'%}">Artists</a>
+              <a class="nav-link fs-4"  style="color: #a5b9b9;"href="{%url 'artistic:artists'%}">Artists</a>
             </li>
             
         
@@ -67,7 +74,7 @@
                 <a class="btn btn-outline-light ms-2" href="{%url 'accounts:login'%}">Login</a>
             </li>
             <li class="nav-item me-3 me-lg-0 pt-2 ">
-                <a class="btn btn-light ms-2 " href="{%url 'accounts:register'%}">Register</a>
+                <a class="btn ms-2 " style="background-color: #a5b9b9;" href="{%url 'accounts:register'%}">Register</a>
             </li>
 
             <div class="dropdown text-end ms-2 me-3 me-lg-0 mr-3 pt-2">
@@ -81,7 +88,7 @@
                   <li><a class="dropdown-item" href="{%url 'artistic:edit'%}">Settings</a></li>
                   <li><a class="dropdown-item" href="{%url 'artistic:profile'%}">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="{%url 'accounts:register'%}">Sign out</a></li>
+                  <li><a class="dropdown-item" href="{%url 'accounts:logout_user'%}">Sign out</a></li>
                 </ul>
               </div>
             

@@ -9,7 +9,7 @@
    -webkit-backdrop-filter: blur(12px);
 }
 
-/* CSS */
+/* btns styling */
 .buttonStyle {
   display: inline-block;
   padding: 15px 25px;
@@ -19,16 +19,17 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #fdda14;
+  background-color: #a5b9b9;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #d5b606}
+
+.button:hover {background-color: #718989}
 
 .button:active {
-  background-color: #fdda14;
+  background-color: #a5b9b9;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -45,25 +46,30 @@
               <h2 class="text-uppercase text-center mb-5">Upload your artwork</h2>
               <p class="text-center mb-5">Let the world know who you are!</p>
 
-              <form>
+              <form  action="{% url 'artistic:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="form-outline mb-4">
-                  <input type="name" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="name" id="form3Example1cg" class="form-control form-control-lg" name="title">
                   <label class="form-label" for="form3Example1cg">Title</label>
                 </div>
+                
                 <div class="form-outline mb-4">
-                  <textarea type="descrption" id="form3Example1cg" class="form-control form-control-lg"/></textarea>
+                  <textarea type="descrption" id="form3Example1cg" class="form-control form-control-lg" name="content"/></textarea>
                   <label class="form-label" for="form3Example1cg">The insporation behind it </label>
                 </div>
 
-               
                 <select class="form-control" name="artwork_type">
                     {% for choice in Artwork.artwork_type_choices.choices %}
                     <option value="{{ choice.0 }}">{{ choice.1 }}</option>
                     {% endfor %}
                 </select>
+                <div class="mb-3">
+                    <label  class="form-label">Publish Date</label>
+                    <input type="datetime-local" class="form-control" name="publish_date" value="{{ post.publish_date }}" />
+                </div>
                 <div class="mb-5">
-                    <label for="formFile" class="form-label">Upload</label>
-                    <input type="file" name="image" accept="image/*" class="form-control" />
+                    <label for="formFile" class="form-label" >Upload</label>
+                    <input type="file" name="image" accept="image/*" class="form-control"/>
                     
                 </div>
                 

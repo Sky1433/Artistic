@@ -2,7 +2,7 @@
 {% load static%}
 {% block content %}
 <!-- overview gallrey start-->
-<div class="container content center p-5 " >
+<div class="container content center p-5  border-bottom mt-5  " >
     <h2 class="wide text-center pt-4 text-light fs-2">Why Inspiration Matters?</h2>
     <br>
     <p class="justify text-center text-light fs-3">Inspiration awakens us to new possibilities by allowing us to transcend our ordinary experiences and limitations. Inspiration propels a person from apathy to possibility, and transforms the way we perceive our own capabilities.</p>
@@ -11,31 +11,32 @@
 </div>
 <!-- overview gallrey End-->
 <!-- Filter start -->
-<div class="container mt-5">
-    <ul class="nav justify-content-center border-bottom ">
-        <li class="nav-item">
-          <a class="nav-link active text-light fs-4" aria-current="page" href="#">Architectural
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fs-4" href="#">Digital</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fs-4" href="#">Painting</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light fs-4" href="#">Crafts</a>
-          </li>
-        
-      </ul>
-  </div>
+
 <!-- Filter End -->
 
 <!-- Gallery start-->
-<div class="container content center p-5" >
-<div class="lightbox">
+<div class="container content center p-5  mb-5 " >
+<div class="lightbox p-2 rounded" style="background-color:#f8f8f8 ;">
     <div class="row">
       <div class="col-lg-6">
+              <!-- {% for image in images %}
+                {% if forloop.first %}
+                    <div class="row ">
+                {% endif %}
+                <div class="col-lg-4 col-md-4 col-12" >
+                    <div class="text-center mt-2">
+                        <img src="{{ media'/images' }}"height="70%" width="70%" class="img-thumbnail w-100 mb-2 mb-md-4 shadow-1-strong rounded" alt="...">
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    <div class=row>
+                {% endif %}
+                {% if forloop.last %}
+                        </div>
+                {% endif %}
+                {% endfor %} -->
+
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
           data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
